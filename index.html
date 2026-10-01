@@ -15,15 +15,15 @@
             <p class="brand-tagline">منصة صياغة وتصميم دعوات الزفاف الملكية</p>
         </div>
         <div class="welcome-banner">
-            <p>لأن أجمل الحكايات تستحق بداية خالدة.. صمم دعوة زفافك الرقمية بكل حب وتفاصيل تُخلد في الأذهان.</p>
+            <p>اصنع دعوة زفافك الرقمية بكل فخامة وحركات تفاعلية تليق بليلة العمر..</p>
         </div>
     </header>
 
     <main class="main-container">
         
-        <!-- لوحة التحكم -->
+        <!-- لوحة التحكم (Control Panel) -->
         <section class="control-panel">
-            <h2>صمم دعوتك بكل تفاصيلها</h2>
+            <h2>تخصيص تفاصيل الدعوة</h2>
 
             <div class="form-group">
                 <label>اسم العريس:</label>
@@ -38,20 +38,20 @@
                 <input type="text" id="inputDate" value="الخميس، 25 أكتوبر 2026" oninput="updateDate(this.value)">
             </div>
             <div class="form-group">
-                <label>رسالة أو آية ترحيبية بالدعوة:</label>
+                <label>رسالة ترحيبية:</label>
                 <input type="text" id="inputCustomMsg" value="لتهنئتكم ومشاركتنا أجمل لحظات العمر" oninput="updateCustomMsg(this.value)">
             </div>
 
-            <!-- التحكم الحر في الألوان (البرندي والسكري أساسي مع حرية التغيير) -->
+            <!-- تخصيص الألوان (البرجندي والسكري) -->
             <div class="form-group">
-                <label>تخصيص لوحة الألوان (الأساس برندي وسكري):</label>
+                <label>لوحة الألوان (برجندي & سكري ملكي):</label>
                 <div class="color-control-grid">
                     <div class="picker-group">
-                        <label>الظرف الخارجي:</label>
+                        <label>الظرف:</label>
                         <input type="color" id="envelopeColorPicker" value="#58111A" onchange="updateEnvelopeColor(this.value)">
                     </div>
                     <div class="picker-group">
-                        <label>لون البطاقة:</label>
+                        <label>البطاقة:</label>
                         <input type="color" id="cardBgColorPicker" value="#FAF6F0" onchange="updateCardBgColor(this.value)">
                     </div>
                     <div class="picker-group">
@@ -59,25 +59,14 @@
                         <input type="color" id="textColorPicker" value="#2C1810" onchange="updateTextColor(this.value)">
                     </div>
                     <div class="picker-group">
-                        <label>الإطار والذهبي:</label>
+                        <label>الذهبي:</label>
                         <input type="color" id="accentColorPicker" value="#D4AF37" onchange="updateAccentColor(this.value)">
                     </div>
                 </div>
             </div>
 
-            <!-- تنسيقات سريعة مقترحة -->
             <div class="form-group">
-                <label>تنسيقات سريعة مقترحة:</label>
-                <div class="templates-grid">
-                    <div class="template-thumb" onclick="applyPreset('#58111A', '#FAF6F0', '#2C1810', '#D4AF37')"><span>برندي ملكي & سكري</span></div>
-                    <div class="template-thumb" onclick="applyPreset('#1E293B', '#FFFFFF', '#0F172A', '#C5A059')"><span>كحلي داكن & أبيض</span></div>
-                    <div class="template-thumb" onclick="applyPreset('#14231E', '#F4F9F5', '#112218', '#A3B899')"><span>أخضر زمردي & سكري</span></div>
-                    <div class="template-thumb" onclick="applyPreset('#2C221E', '#FFF8F0', '#221814', '#D48C46')"><span>بنّي شوكولاتة & بيج</span></div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label>اختر نمط الخط الملكي:</label>
+                <label>اختر نمط الخط:</label>
                 <select id="fontSelector" onchange="changeFont(this.value)">
                     <option value="'Amiri', serif">الخط الأول (أميري كلاسيكي أصيل)</option>
                     <option value="'Reem Kufi', sans-serif">الخط الثاني (رُيم كوفي فخم)</option>
@@ -86,32 +75,32 @@
             </div>
 
             <div class="form-group">
-                <label>موسيقى الدعوة (تشتغل في الخلفية):</label>
+                <label>موسيقى الخلفية:</label>
                 <label for="audioUpload" class="file-upload-btn" id="audioLabel">🎵 اضغط هنا لرفع ملف الصوت</label>
                 <input type="file" accept="audio/*" id="audioUpload" onchange="handleAudioUpload(this)">
             </div>
 
             <div class="checkout-section">
-                <h3>تأكيد الحجز (تحويل كاش / إنستاباي)</h3>
-                <p class="payment-instructions">التحويل على: <strong>01000000000</strong></p>
+                <h3>تأكيد الحجز (إنستاباي / كاش)</h3>
+                <p class="payment-instructions">التحويل على الرقم: <strong>سيتم إضافته قريباً</strong></p>
                 
-                <label for="receiptUpload" class="file-upload-btn" id="receiptLabel">📎 اضغط هنا لرفع صورة إيصال التحويل</label>
+                <label for="receiptUpload" class="file-upload-btn" id="receiptLabel">📎 اضغط هنا لرفع إيصال التحويل</label>
                 <input type="file" accept="image/*" id="receiptUpload" onchange="updateFileName(this, 'receiptLabel')">
                 
                 <button class="submit-btn" onclick="submitOrder()">تأكيد وطلب الدعوة النهائية 💌</button>
             </div>
         </section>
 
-        <!-- شاشة المعاينة (إطار الموبايل) -->
+        <!-- شاشة المعاينة الحية (Mobile Mockup) -->
         <section class="preview-section-wrapper">
-            <h3 class="preview-title">معاينة حية للدعوة (شاشة الموبايل)</h3>
+            <h3 class="preview-title">معاينة حية للدعوة (تفاعل فوري)</h3>
             <div class="mobile-mockup-frame">
                 <div class="preview-section" id="previewBackground">
                     
-                    <!-- عنصر الصوت المخفي للتشغيل التلقائي عند الفتح -->
+                    <!-- ملف الصوت -->
                     <audio id="bgMusic" loop></audio>
 
-                    <!-- الظرف الفخم مع ختم الشمع الملكي -->
+                    <!-- الظرف مع ختم الشمع المتحرك -->
                     <div class="envelope" id="envelopeBox" onclick="openEnvelopeWithMusic()">
                         <div class="envelope-inner-lining"></div>
                         <div class="wax-seal-badge">
@@ -122,15 +111,17 @@
                         </div>
                     </div>
 
-                    <!-- كارت الدعوة الداخلي -->
+                    <!-- كارت الدعوة الداخلي بتصميم زايتورا الراقي -->
                     <div class="invitation-card" id="invitationCard">
                         <div class="inner-card-border">
+                            <div class="card-ornament top-ornament"></div>
                             <span class="invite-header-text">يسعدنا حضوركم حفل زفافنا المبارك</span>
                             <h1 id="displayGroom">أحمد</h1>
                             <span class="ampersand">&</span>
                             <h1 id="displayBride">سارة</h1>
                             <p class="event-date-display" id="displayDate">الخميس، 25 أكتوبر 2026</p>
                             <div class="welcome-msg" id="displayCustomMsg">لتهنئتكم ومشاركتنا أجمل لحظات العمر</div>
+                            <div class="card-ornament bottom-ornament"></div>
                         </div>
                     </div>
 
