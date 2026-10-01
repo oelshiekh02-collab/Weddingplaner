@@ -3,72 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تصميم دعوات رقمية فخمة</title>
+    <title>Eternal Vows | منصة دعوات الزفاف الرقمية الفخمة</title>
     <link rel="stylesheet" href="style.css">
-    <!-- استدعاء خطوط جوجل اللي حملتها -->
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <!-- استدعاء خطوط جوجل الافتراضية والخطوط الخاصة بك -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700&family=Reem+Kufi:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="app-container">
-        <!-- شاشة اختيار القالب والألوان -->
+    <!-- الهيدر الثابت للبراند -->
+    <header class="brand-header">
+        <div class="logo-container">
+            <h1 class="brand-name">Eternal Vows</h1>
+            <p class="brand-tagline">منصة صياغة وتصميم دعوات الزفاف الملكية</p>
+        </div>
+    </header>
+
+    <!-- المحتوى الرئيسي للموقع -->
+    <main class="main-container">
+        
+        <!-- لوحة التحكم الاحترافية لتصميم الدعوة -->
         <section class="control-panel">
-            <h2>صمم دعوتك بنفسك</h2>
-            
-            <!-- 1. اختيار القالب الأساسي (الصور اللي رفعتها) -->
-            <label>اختر قالب التصميم:</label>
-            <div class="templates-grid">
-                <div class="template-thumb" onclick="changeTheme('images/theme1.jpg', '#0b192c', '#d4af37')">
-                    <img src="images/theme1.jpg" alt="قالب كحلي">
-                </div>
-                <div class="template-thumb" onclick="changeTheme('images/theme2.jpg', '#4a0e2e', '#f3e5ab')">
-                    <img src="images/theme2.jpg" alt="قالب بورجوندي">
-                </div>
-                <div class="template-thumb" onclick="changeTheme('images/theme3.jpg', '#3b0917', '#ffffff')">
-                    <img src="images/theme3.jpg" alt="قالب فاخر">
+            <h2>صمم دعوتك بكل تفاصيلها</h2>
+
+            <!-- 1. إدخال أسماء العروسين وتفاصيل الحفل -->
+            <div class="form-group">
+                <label>اسم العريس:</label>
+                <input type="text" id="inputGroom" value="أحمد" oninput="updateGroomName(this.value)">
+            </div>
+            <div class="form-group">
+                <label>اسم العروس:</label>
+                <input type="text" id="inputBride" value="سارة" oninput="updateBrideName(this.value)">
+            </div>
+            <div class="form-group">
+                <label>تاريخ وموعد الحفل:</label>
+                <input type="text" id="inputDate" value="الخميس، 25 أكتوبر 2026" oninput="updateDate(this.value)">
+            </div>
+
+            <!-- 2. اختيار القالب الأساسي -->
+            <div class="form-group">
+                <label>اختر قالب التصميم الفاخر:</label>
+                <div class="templates-grid">
+                    <div class="template-thumb" onclick="changeTheme('images/theme1.jpg', '#0f172a', '#d4af37')">
+                        <img src="images/theme1.jpg" alt="قالب كحلي">
+                    </div>
+                    <div class="template-thumb" onclick="changeTheme('images/theme2.jpg', '#4a0e2e', '#e6c594')">
+                        <img src="images/theme2.jpg" alt="قالب بورجوندي">
+                    </div>
+                    <div class="template-thumb" onclick="changeTheme('images/theme3.jpg', '#2d0c15', '#ffffff')">
+                        <img src="images/theme3.jpg" alt="قالب فاخر">
+                    </div>
+                    <div class="template-thumb" onclick="changeTheme('images/theme4.jpg', '#5c1d32', '#f3d5b5')">
+                        <img src="images/theme4.jpg" alt="قالب كريستال">
+                    </div>
                 </div>
             </div>
 
-            <!-- 2. أدوات التحكم في الألوان (الظرف والخطوط) -->
-            <div class="color-pickers">
+            <!-- 3. لوحة التحكم بالألوان الملكية المتدرجة -->
+            <div class="color-control-grid">
                 <div class="picker-group">
-                    <label>لون الظرف / الغلاف:</label>
+                    <label>لون الغلاف/الظرف:</label>
                     <input type="color" id="envelopeColorPicker" value="#4a0e2e" onchange="updateEnvelopeColor(this.value)">
                 </div>
                 <div class="picker-group">
-                    <label>لون الخط والنص:</label>
-                    <input type="color" id="textColorPicker" value="#d4af37" onchange="updateTextColor(this.value)">
+                    <label>لون النصوص والإطار:</label>
+                    <input type="color" id="textColorPicker" value="#e6c594" onchange="updateTextColor(this.value)">
                 </div>
             </div>
 
-            <!-- 3. اختيار الخط -->
-            <label>اختر شكل الخط:</label>
-            <select id="fontSelector" onchange="changeFont(this.value)">
-                <option value="'Amiri', serif">خط أميري كلاسيكي</option>
-                <option value="'Cairo', sans-serif">خط كايرو عصري</option>
-            </select>
-        </section>
-
-        <!-- معاينة الدعوة الحية (الظرف والكارت) -->
-        <section class="preview-section" id="previewBackground" style="background-image: url('images/theme1.jpg');">
-            
-            <!-- الظرف المتحرك الذي يفتح -->
-            <div class="envelope" id="envelopeBox" onclick="openEnvelope()">
-                <div class="envelope-flap" id="envelopeFlap"></div>
-                <div class="seal-btn">اضغط لفتح الدعوة 💌</div>
+            <!-- 4. اختيار شكل الخطوط الخمسة الخاصة بك -->
+            <div class="form-group">
+                <label>اختر نمط الخط الملكي:</label>
+                <select id="fontSelector" onchange="changeFont(this.value)">
+                    <option value="'Amiri', serif">الخط الأول (أميري كلاسيكي أصيل)</option>
+                    <option value="'Reem Kufi', sans-serif">الخط الثاني (رُيم كوفي فخم)</option>
+                    <option value="'Cairo', sans-serif">الخط الثالث (كايرو عصري ناعم)</option>
+                    <option value="'MyCustomFont4', serif">الخط الرابع (ملكي خاص)</option>
+                    <option value="'MyCustomFont5', sans-serif">الخط الخامس (توقيعي فاخر)</option>
+                </select>
             </div>
 
-            <!-- محتوى الدعوة الداخلي -->
-            <div class="invitation-card" id="invitationCard">
-                <h1 id="groomName">أحمد</h1>
-                <span class="ampersand">&</span>
-                <h1 id="brideName">سارة</h1>
-                <p class="event-date">يسعدنا حضوركم حفل زفافنا المبروك</p>
+            <!-- 5. رفع الأغنية أو الموسيقى -->
+            <div class="form-group">
+                <label>ارفع مقطع الموسيقى الخاص بالدعوة:</label>
+                <input type="file" accept="audio/*" id="audioUpload">
+            </div>
+
+            <!-- 6. تأكيد الطلب والدفع (رفع إيصال الكاش) -->
+            <div class="checkout-section">
+                <h3>تأكيد حجز الدعوة (الدفع عبر المحفظة / إنستاباي)</h3>
+                <p class="payment-instructions">يرجى التحويل على رقم: <strong>01000000000</strong> ثم رفع صورة إيصال التحويل هنا:</p>
+                <input type="file" accept="image/*" id="receiptUpload">
+                <button class="submit-btn" onclick="submitOrder()">تأكيد وطلب الدعوة النهائية 💌</button>
             </div>
         </section>
-    </div>
+
+        <!-- منطقة معاينة الدعوة والظرف المتحرك (تتفاعل وحدها مع التصميم) -->
+        <section class="preview-section-wrapper">
+            <h3 class="preview-title">معاينة حية للدعوة</h3>
+            <div class="preview-section" id="previewBackground" style="background-image: url('images/theme1.jpg');">
+                
+                <!-- الظرف المتحرك بالختم الشمعي -->
+                <div class="envelope" id="envelopeBox" onclick="openEnvelope()">
+                    <div class="seal-badge">
+                        <span>Eternal Vows</span>
+                        <small>اضغط لفتح الدعوة</small>
+                    </div>
+                </div>
+
+                <!-- محتوى كارت الدعوة الداخلي -->
+                <div class="invitation-card" id="invitationCard">
+                    <span class="invite-header-text">يسعدنا حضوركم حفل زفافنا المبارك</span>
+                    <h1 id="displayGroom">أحمد</h1>
+                    <span class="ampersand">&</span>
+                    <h1 id="displayBride">سارة</h1>
+                    <p class="event-date-display" id="displayDate">الخميس، 25 أكتوبر 2026</p>
+                    <div class="welcome-msg">لتهنئتكم ومشاركتنا أجمل لحظات العمر</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- الفوتر الثابت للحقوق والسياسات -->
+    <footer class="brand-footer">
+        <div class="footer-content">
+            <p>&copy; 2026 <strong>Eternal Vows</strong>. جميع الحقوق محفوظة.</p>
+            <div class="footer-links">
+                <a href="#">سياسة الخصوصية</a> | 
+                <a href="#">الشروط والأحكام</a> | 
+                <a href="#">دعم العملاء</a>
+            </div>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
-                  </html>
-                  
+</html>
