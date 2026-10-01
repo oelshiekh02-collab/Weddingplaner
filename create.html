@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة تصميم الدعوات | Zaytora Invites</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- هيدر صفحة التصميم -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="brand-logo" onclick="location.href='index.html'" style="cursor:pointer;">Zaytora Invites</div>
+            <a href="index.html" class="btn-trans" style="text-decoration:none; font-size:12px;">← العودة للرئيسية</a>
+        </div>
+    </header>
+
+    <!-- قسم لوحة التصميم الفوري والمعاينة -->
+    <section class="designer-page-section">
+        <div class="section-title">
+            <h2>صمّم دعوتك التفاعلية الآن</h2>
+            <p>املأ التفاصيل أدناه، واضغط على شاشة الموبايل لتجربة فتح الظرف بالصوت والأنيميشن!</p>
+        </div>
+
+        <div class="designer-container">
+            <!-- نموذج إدخال البيانات -->
+            <div class="form-box">
+                <h3>✍️ تفاصيل المناسبة وأسماء العروسين</h3>
+                <div class="input-group">
+                    <label>عنوان المناسبة:</label>
+                    <input type="text" id="inputTitle" value="حفل زفاف مبارك" oninput="updateLivePreview()">
+                </div>
+                <div class="input-group">
+                    <label>أسماء العروسين:</label>
+                    <input type="text" id="inputNames" value="أسامة & جمانة" oninput="updateLivePreview()">
+                </div>
+                <div class="input-group">
+                    <label>مكان الحفل:</label>
+                    <input type="text" id="inputLocation" value="فندق الريتز كارلتون - الرياض" oninput="updateLivePreview()">
+                </div>
+                <div class="input-group">
+                    <label>اختر القالب التفاعلي:</label>
+                    <select id="inputTemplate" onchange="updateLivePreview()">
+                        <option value="swan">ختم البجعتين الملكي (أخضر زيتي)</option>
+                        <option value="gold">خاتم الألماس (بورجوندي فخم)</option>
+                        <option value="roses">الورد الجوري الأحمر</option>
+                    </select>
+                </div>
+                <button class="btn-gold" style="width:100%; margin-top:15px;" onclick="alert('تم حفظ التصميم بنجاح! جاهز للاستلام.')">حفظ وطلب الدعوة 🎁</button>
+            </div>
+
+            <!-- معاينة الموبايل الحية التفاعلية -->
+            <div class="preview-phone-box">
+                <div class="phone-frame">
+                    <!-- شاشة الظرف المغلق (لا تفتح إلا بالضغط عليها) -->
+                    <div class="env-screen" id="envScreen" onclick="openEnv()">
+                        <div class="modal-seal" id="modalSeal">
+                            <span id="sealIcon">🦢</span>
+                            <small>اضغط للفتح 💌</small>
+                        </div>
+                    </div>
+
+                    <!-- شاشة الدعوة الداخلية بعد الفتح (تسحب لتحت لمشاهدة التفاصيل) -->
+                    <div class="card-screen">
+                        <span style="font-size: 28px; margin-bottom: 5px;" id="previewIcon">🏛️</span>
+                        <h2 id="prevTitle">حفل زفاف مبارك</h2>
+                        <h1 id="prevNames">أسامة & جمانة</h1>
+                        <p id="prevLocation">📍 فندق الريتز كارلتون - الرياض</p>
+                        
+                        <div class="countdown-box">
+                            <span>⏳ العد التنازلي: متبقي أيام وليالي للحفل</span>
+                        </div>
+
+                        <div style="margin-top: 15px; display: flex; gap: 8px;">
+                            <button class="btn-gold" style="padding: 5px 10px; font-size: 10px;">تأكيد الحضور</button>
+                            <button class="btn-trans" style="padding: 5px 10px; font-size: 10px; color:#333; border-color:#555;">الموقع</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- صوت فتح الظرف الحقيقي -->
+    <audio id="creakSound" src="https://www.soundjay.com/doors/door-creak-1.mp3"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
