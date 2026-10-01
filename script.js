@@ -14,18 +14,6 @@ function updateCustomMsg(val) {
     document.getElementById('displayCustomMsg').innerText = val || 'لتهنئتكم ومشاركتنا أجمل لحظات العمر';
 }
 
-function applyPreset(envColor, cardBg, textColor, accentColor) {
-    updateEnvelopeColor(envColor);
-    updateCardBgColor(cardBg);
-    updateTextColor(textColor);
-    updateAccentColor(accentColor);
-    
-    document.getElementById('envelopeColorPicker').value = envColor;
-    document.getElementById('cardBgColorPicker').value = cardBg;
-    document.getElementById('textColorPicker').value = textColor;
-    document.getElementById('accentColorPicker').value = accentColor;
-}
-
 function updateEnvelopeColor(color) {
     document.documentElement.style.setProperty('--envelope-bg', color);
     document.getElementById('previewBackground').style.backgroundColor = color;
@@ -75,7 +63,7 @@ function openEnvelopeWithMusic() {
     const audioElem = document.getElementById('bgMusic');
     if (audioElem.src) {
         audioElem.play().catch(error => {
-            console.log("التشغيل التلقائي يتطلب تفاعل المستخدم وتم بنجاح عبر الضغط.");
+            console.log("التشغيل التلقائي يتطلب تفاعل المستخدم وتم بنجاح.");
         });
     }
 }
@@ -95,5 +83,5 @@ function submitOrder() {
         return;
     }
 
-    alert('تم إرسال طلب دعوة "Eternal Vows" بنجاح! سيتم تجهيز رابط الدعوة الخاص بك.');
+    alert('تم إرسال طلب دعوة "Eternal Vows" بنجاح!');
 }
