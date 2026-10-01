@@ -2,224 +2,200 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eternal Vows | منصة دعوات الزفاف الرقمية الفخمة</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Zaytora Invites | منصة دعوات الزفاف الرقمية التفاعلية</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- هيدر الموقع (Header) -->
+    <!-- الهيدر -->
     <header class="main-header">
         <div class="header-container">
-            <div class="brand-logo">Eternal Vows</div>
+            <div class="brand-logo">Zaytora Invites</div>
             <nav class="nav-links">
                 <a href="#home">الرئيسية</a>
-                <a href="#templates">القوالب</a>
+                <a href="#templates">القوالب الفاخرة</a>
                 <a href="#features">المميزات</a>
                 <a href="#pricing">الأسعار</a>
                 <a href="#reviews">آراء العملاء</a>
-                <a href="#faq">الأسئلة الشائعة</a>
             </nav>
             <div class="header-actions">
-                <button class="btn-outline">تسجيل الدخول</button>
-                <button class="btn-solid">إنشاء حساب</button>
+                <button class="btn-solid" onclick="scrollToSection('templates')">صمّم دعوتك الآن</button>
             </div>
         </div>
     </header>
 
-    <!-- 1. القسم الرئيسي (Hero Section) -->
+    <!-- القسم الرئيسي -->
     <section id="home" class="hero-section">
         <div class="hero-content">
-            <h1>صمّم دعوتك الرقمية المثالية</h1>
-            <p>تصاميم فاخرة • مشاركة فورية • استجابات سلسة</p>
+            <h1>انصدم بجمال دعواتك الرقمية التفاعلية</h1>
+            <p>أصوات واقعية، حركات أنيميشن مذهلة، وأختام شمعية تفتح وكأنها حقيقية تماماً!</p>
             <div class="hero-buttons">
-                <a href="#templates" class="btn-gold">✨ أنشئ دعوة</a>
-                <a href="#templates" class="btn-trans">تصفح القوالب</a>
+                <button class="btn-gold" onclick="scrollToSection('templates')">✨ تصفح القوالب الساحرة</button>
             </div>
         </div>
     </section>
 
-    <!-- 2. قسم كتالوج القوالب (Templates Catalog) -->
+    <!-- قسم القوالب الساحرة والمتحركة -->
     <section id="templates" class="catalog-section">
         <div class="section-title">
-            <h2>كتالوج القوالب الفاخرة</h2>
-            <p>تصفح مجموعتنا من القوالب المصممة بعناية، وابحث حسب الفئة لتناسب احتفالك.</p>
+            <h2>القوالب الحصرية التفاعلية</h2>
+            <p>اضغط على أي قالب لتجربة الفتح بالصوت والأنيميشن الواقعي!</p>
         </div>
 
         <div class="templates-grid">
-            <!-- قالب 1: الظرف الأخضر والبجعتين (المطابق لطلبك) -->
-            <div class="template-card" onclick="openDemoModal('swan')">
-                <div class="template-badge">POPULAR</div>
+            <!-- قالب 1 -->
+            <div class="template-card" onclick="openDemoModal('swan', 'أسامة & كريتالآ', 'فندق الريتز كارلتون - الرياض')">
+                <div class="template-badge">الأكثر طلباً</div>
                 <div class="template-img-box swan-bg">
                     <div class="mini-seal">🦢</div>
                 </div>
                 <div class="template-info">
-                    <h3>W114 - زفاف ملكي</h3>
-                    <p>تصميم نباتي مع ختم بجعتين فاخر</p>
-                    <button class="preview-btn">معاينة القالب 👁️</button>
+                    <h3>الختم الشمعي الملكي (بجعتين)</h3>
+                    <p>فتح ظرف أسطوري مع تزييق الباب وصوت الظرف الحقيقي</p>
+                    <button class="preview-btn">معاينة تفاعلية 👁️️</button>
                 </div>
             </div>
 
-            <!-- قالب 2: زفاف ذهبي كلاسيكي -->
-            <div class="template-card" onclick="openDemoModal('gold')">
-                <div class="template-badge">POPULAR</div>
+            <!-- قالب 2 -->
+            <div class="template-card" onclick="openDemoModal('gold', 'أحمد & فاطمة', 'قاعة الماس - القاهرة')">
+                <div class="template-badge">جديد</div>
                 <div class="template-img-box gold-bg">
                     <div class="mini-seal">💍</div>
                 </div>
                 <div class="template-info">
-                    <h3>H003 - قصر الأفراح</h3>
-                    <p>ديكور داخلي فخم مع إضاءة دافئة</p>
-                    <button class="preview-btn">معاينة القالب 👁️</button>
+                    <h3>خاتم الألماس الذهبي</h3>
+                    <p>تصميم بورجوندي فاخر مع حركة انزلاق رومانسية</p>
+                    <button class="preview-btn">معاينة تفاعلية 👁️</button>
                 </div>
             </div>
 
-            <!-- قالب 3: خطوبة ناعمة -->
-            <div class="template-card" onclick="openDemoModal('engagement')">
-                <div class="template-badge">NEW</div>
+            <!-- قالب 3 -->
+            <div class="template-card" onclick="openDemoModal('roses', 'محمود & مريم', 'فندق الفور سيزونز - الإسكندرية')">
+                <div class="template-badge">حصري</div>
                 <div class="template-img-box eng-bg">
-                    <div class="mini-seal">🌿</div>
+                    <div class="mini-seal">🌹</div>
                 </div>
                 <div class="template-info">
-                    <h3>E008 - زهور الزيتون</h3>
-                    <p>طابع هادئ وبسيط لعشاق البساطة</p>
-                    <button class="preview-btn">معاينة القالب 👁️</button>
+                    <h3>الورد الجوري الفاخر</h3>
+                    <p>تأثيرات بصرية خلابة وأوراق ناعمة متساقطة</p>
+                    <button class="preview-btn">معاينة تفاعلية 👁️</button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 3. قسم المميزات القوية -->
+    <!-- قسم المميزات -->
     <section id="features" class="features-section">
         <div class="section-title">
-            <h2>ميزات قوية</h2>
-            <p>كل ما تحتاجه لإنشاء الدعوة المثالية</p>
+            <h2>لماذا يختارنا عرسان الموت؟</h2>
         </div>
         <div class="features-grid">
-            <div class="feature-box">💎 <h3>قوالب فاخرة</h3><p>قوالب مصممة احترافياً بجماليات راقية.</p></div>
-            <div class="feature-box">🌐 <h3>دعم ثنائي اللغة</h3><p>أنشئ دعوات بالإنجليزية أو العربية أو كليهما.</p></div>
-            <div class="feature-box">🎵 <h3>تكامل الموسيقى</h3><p>أضف موسيقى خلفية عبر الرفع أو رابط يوتيوب.</p></div>
-            <div class="feature-box">🏷️ <h3>ملفات مخصصة</h3><p>خلفيات باسمك وتحكم بها لأصول تجارية منسقة.</p></div>
-            <div class="feature-box">📅 <h3>برنامج الحفل</h3><p>عرض جدول أعمال حفلَك مع مطابقة الأيفونات العائلية.</p></div>
-            <div class="feature-box">📊 <h3>دعم المعرض</h3><p>عرض حتى 6 صور جميلة في دعوتك.</p></div>
+            <div class="feature-box">🔊 <h3>أصوات واقعية</h3><p>صوت تزييق الظرف وفتحه يضفي شعوراً حقيقياً.</p></div>
+            <div class="feature-box">✨ <h3>أنيميشن مبهر</h3><p>حركات انتقالية وتأثيرات بصرية تخطف الأنفاس.</p></div>
+            <div class="feature-box">📊 <h3>إدارة الردود</h3><p>تأكيد حضور الضيوف بشكل مباشر ومرتب.</p></div>
         </div>
     </section>
 
-    <!-- 4. قسم الأسعار (Pricing) -->
+    <!-- قسم الأسعار المحدثة -->
     <section id="pricing" class="pricing-section">
         <div class="section-title">
-            <h2>دعوة واحدة، سعر واحد</h2>
-            <p>اختار عملتك المفضلة، كل خطة تشمل التجربة الكاملة للدعوة الكاملة مع جميع الميزات الفاخرة.</p>
+            <h2>سعر موحد ومناسب للجميع</h2>
+            <p>استمتع بكافة ميزات القوالب التفاعلية بالأسعار التالية:</p>
         </div>
         <div class="pricing-grid">
             <div class="price-card">
-                <h3>ريال سعودي (SAR)</h3>
-                <div class="price-val">70.46 <span>SAR</span></div>
+                <h3>بالريال السعودي</h3>
+                <div class="price-val">25 <span>SAR</span></div>
                 <ul>
-                    <li>✓ دعوة رقمية كاملة</li>
-                    <li>✓ موسيقى ومعرض مخصص</li>
-                    <li>✓ إدارة الردود</li>
-                    <li>✓ رمز QR والمشاركة</li>
-                    <li>✓ جميع القوالب الفاخرة</li>
+                    <li>✓ دعوة تفاعلية كاملة بالصوت</li>
+                    <li>✓ جميع المؤثرات والأنيميشن</li>
+                    <li>✓ إدارة الردود والعد التنازلي</li>
                 </ul>
-                <button class="btn-gold" style="width:100%; margin-top:15px;">اختر هذه الخطة</button>
+                <button class="btn-gold" style="width:100%; margin-top:15px;">اختيار الباقة</button>
             </div>
             <div class="price-card featured">
-                <h3>جنيه مصري (EGP / محلي)</h3>
-                <div class="price-val">69.01 <span>EGP</span></div>
+                <h3>بالجنيه المصري (المحلي)</h3>
+                <div class="price-val">300 <span>EGP</span></div>
                 <ul>
-                    <li>✓ دعوة رقمية كاملة</li>
-                    <li>✓ موسيقى ومعرض مخصص</li>
-                    <li>✓ إدارة الردود</li>
-                    <li>✓ رمز QR والمشاركة</li>
-                    <li>✓ جميع القوالب الفاخرة</li>
+                    <li>✓ دعوة تفاعلية كاملة بالصوت</li>
+                    <li>✓ جميع المؤثرات والأنيميشن</li>
+                    <li>✓ إدارة الردود والعد التنازلي</li>
                 </ul>
-                <button class="btn-gold" style="width:100%; margin-top:15px;">اختر هذه الخطة</button>
+                <button class="btn-gold" style="width:100%; margin-top:15px;">اختيار الباقة</button>
             </div>
             <div class="price-card">
-                <h3>دولار أمريكي (USD)</h3>
-                <div class="price-val">18.79 <span>USD</span></div>
+                <h3>بالدولار الأمريكي</h3>
+                <div class="price-val">6.50 <span>USD</span></div>
                 <ul>
-                    <li>✓ دعوة رقمية كاملة</li>
-                    <li>✓ موسيقى ومعرض مخصص</li>
-                    <li>✓ إدارة الردود</li>
-                    <li>✓ رمز QR والمشاركة</li>
-                    <li>✓ جميع القوالب الفاخرة</li>
+                    <li>✓ دعوة تفاعلية كاملة بالصوت</li>
+                    <li>✓ جميع المؤثرات والأنيميشن</li>
+                    <li>✓ إدارة الردود والعد التنازلي</li>
                 </ul>
-                <button class="btn-gold" style="width:100%; margin-top:15px;">اختر هذه الخطة</button>
+                <button class="btn-gold" style="width:100%; margin-top:15px;">اختيار الباقة</button>
             </div>
         </div>
     </section>
 
-    <!-- 5. آراء العملاء (Reviews) -->
+    <!-- آراء العملاء -->
     <section id="reviews" class="reviews-section">
         <div class="section-title">
-            <h2>ماذا يقول عملاؤنا</h2>
-            <div class="rating-box-header">
-                <span class="stars">★★★★★</span>
-                <span class="score">5.0 / 5.0</span>
-            </div>
+            <h2>آراء العرسان</h2>
         </div>
         <div class="reviews-grid">
             <div class="review-card">
-                <p>«أنصح بشدة، ما شاء الله عليكم شغل مرتب، وإدارة للطرف صعبة وسهلة جداً.»</p>
-                <small>- Bader ⭐⭐⭐⭐⭐</small>
+                <p>«الضيوف اتخضوا من جمال الأنميشن وصوت فتح الظرف، بجد حاجة فخمة جداً!»</p>
+                <small>- أسامة وجمانة ⭐⭐⭐⭐⭐</small>
             </div>
             <div class="review-card">
-                <p>«خدمة احترافية، مكان طبيعي يتسع جداً، موقع فخم وجميل وفريد من نوعه.»</p>
-                <small>- أسامة ⭐⭐⭐⭐⭐</small>
-            </div>
-            <div class="review-card">
-                <p>«دعوة رائعة جداً، كانت تجربة رائعة جداً، شكراً لكل من ساهم في هذا المشروع الرائع.»</p>
-                <small>- عبد الرحمن ⭐⭐⭐⭐⭐</small>
+                <p>«التصميم والسرعة على الموبايل مفيش بعد كدة، عاش بجد!»</p>
+                <small>- أحمد عادل ⭐⭐⭐⭐⭐</small>
             </div>
         </div>
     </section>
 
-    <!-- 6. الأسئلة الشائعة (FAQ) -->
-    <section id="faq" class="faq-section">
-        <div class="section-title">
-            <h2>الأسئلة الأكثر شيوعاً</h2>
-        </div>
-        <div class="faq-container">
-            <details class="faq-item"><summary>كم يستغرق إعداد الدعوة الرقمية؟</summary><p>يتم إعداد دعوتك بشكل فوري بمجرد إدخال بياناتك واختيار القالب.</p></details>
-            <details class="faq-item"><summary>هل يمكنني تعديل الدعوة بعد نشرها؟</summary><p>نعم، يمكنك التعديل في أي وقت من لوحة التحكم الخاصة بك.</p></details>
-            <details class="faq-item"><summary>كيف يدير نظام الرد ردود الضيوف؟</summary><p>يظهر لك جدول تفاعلي يؤكد فيه الضيوف حضورهم بشكل فوري.</p></details>
-        </div>
-    </section>
-
-    <!-- نافذة منبثقة لمعاينة القالب التفاعلي (Modal) -->
+    <!-- نافذة المعاينة التفاعلية الخرافية (Modal) -->
     <div id="demoModal" class="modal-overlay">
         <div class="modal-content">
-            <button class="close-modal" onclick="closeDemoModal()">✕</button>
+            <button class="close-modal" onclick="closeDemoModal()">✕ خروج</button>
             <div class="phone-frame">
-                <!-- شاشة الظرف المغلق -->
+                
+                <!-- شاشة الظرف التفاعلي مع الختم -->
                 <div class="env-screen" id="envScreen" onclick="openEnv()">
-                    <div class="modal-seal">
+                    <div class="modal-seal" id="modalSeal">
                         <span id="sealIcon">🦢</span>
                         <small>اضغط للفتح 💌</small>
                     </div>
                 </div>
-                <!-- بطاقة الدعوة الداخلية -->
+
+                <!-- شاشة الدعوة من الداخل بعد الفتح -->
                 <div class="card-screen">
+                    <span style="font-size: 30px; margin-bottom: 5px;">🏛️</span>
                     <h2 id="cardTitle">حفل زفاف مبارك</h2>
-                    <h1 id="cardNames">أسامة & كريتالآ</h1>
+                    <h1 id="cardNames">أسامة & جمانة</h1>
                     <p id="cardLocation">📍 فندق الريتز كارلتون - الرياض</p>
+                    
                     <div class="countdown-box">
-                        <span>⏳ العد التنازلي جارٍ للحفل</span>
+                        <span>⏳ العد التنازلي: متبقي أيام وليالي للحفل</span>
+                    </div>
+
+                    <div style="margin-top: 20px; display: flex; gap: 10px;">
+                        <button class="btn-gold" style="padding: 6px 12px; font-size: 11px;">تأكيد الحضور</button>
+                        <button class="btn-trans" style="padding: 6px 12px; font-size: 11px; color:#333; border-color:#555;">الموقع</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- الفوتر (Footer) -->
     <footer>
-        <p>&copy; 2026 Eternal Vows. جميع الحقوق محفوظة.</p>
+        <p>&copy; 2026 Zaytora Invites. جميع الحقوق محفوظة.</p>
     </footer>
 
+    <!-- صوت فتح الظرف والتزييق الحقيقي -->
     <audio id="creakSound" src="https://www.soundjay.com/doors/door-creak-1.mp3"></audio>
     <script src="script.js"></script>
 </body>
-                    </html>
-                    
+    </html>
+    
