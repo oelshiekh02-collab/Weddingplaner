@@ -1,0 +1,163 @@
+:root {
+    --envelope-bg: #4a0e2e;
+    --text-color: #d4af37;
+    --main-font: 'Amiri', serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--main-font);
+    background-color: #111;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 450px;
+    background: #1e1e1e;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.control-panel {
+    padding: 15px;
+    background: #252525;
+    border-bottom: 2px solid #333;
+}
+
+.control-panel label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 14px;
+    color: #ccc;
+}
+
+.templates-grid {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 5px;
+}
+
+.template-thumb img {
+    width: 60px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.template-thumb img:hover {
+    border-color: #d4af37;
+}
+
+.color-pickers {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.picker-group {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.picker-group input[type="color"] {
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: none;
+}
+
+select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    background: #333;
+    color: #fff;
+    border: 1px solid #444;
+}
+
+/* شاشة المعاينة والظرف */
+.preview-section {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* الظرف */
+.envelope {
+    position: absolute;
+    width: 85%;
+    height: 80%;
+    background-color: var(--envelope-bg);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.8s ease, opacity 0.5s ease;
+    z-index: 10;
+    border: 2px solid var(--text-color);
+}
+
+.envelope.open {
+    transform: translateY(-100%) scale(0.9);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.seal-btn {
+    background: var(--text-color);
+    color: #111;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* كارت الدعوة الداخلي */
+.invitation-card {
+    text-align: center;
+    padding: 20px;
+    z-index: 1;
+    color: var(--text-color);
+    font-family: var(--main-font);
+}
+
+.invitation-card h1 {
+    font-size: 32px;
+    margin: 5px 0;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.ampersand {
+    font-size: 20px;
+    color: var(--text-color);
+}
+
+.event-date {
+    margin-top: 15px;
+    font-size: 16px;
+  }
