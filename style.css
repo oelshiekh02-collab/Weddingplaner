@@ -1,18 +1,9 @@
 :root {
-    --envelope-bg: #4a121a;         /* الزنجي الفاخر */
-    --card-text-color: #fdfbf7;     /* السكري الناعم */
+    --envelope-bg: #58111A;         /* البرندي الأساسي */
+    --card-bg: #FAF6F0;             /* السكري الناعم للبطاقة */
+    --card-text-color: #2C1810;     /* النصوص الدافئة المتناسقة مع السكري */
     --card-font: 'Amiri', serif;
-    --accent-color: #e6c594;        /* الذهبي الدافئ المتناسق */
-}
-
-/* تعريف خطوطك الخاصة المضافة في مجلد fonts */
-@font-face {
-    font-family: 'MyCustomFont4';
-    src: url('fonts/font4.ttf');
-}
-@font-face {
-    font-family: 'MyCustomFont5';
-    src: url('fonts/font5.ttf');
+    --accent-color: #D4AF37;        /* الذهبي الفاخر */
 }
 
 * {
@@ -23,17 +14,16 @@
 
 body {
     font-family: 'Cairo', sans-serif;
-    background-color: #060606;
-    color: #e2e8f0;
+    background-color: #120D0E;      
+    color: #F3EFEA;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
-/* الهيدر الثابت الفخم مع البانر الترحيبي */
 .brand-header {
-    background: linear-gradient(135deg, #111, #181818);
-    border-bottom: 2px solid #b8860b;
+    background: linear-gradient(135deg, #3A0A10, #58111A);
+    border-bottom: 2px solid var(--accent-color);
     padding: 15px;
     text-align: center;
 }
@@ -41,31 +31,29 @@ body {
 .brand-name {
     font-family: 'Amiri', serif;
     font-size: 30px;
-    color: #e6c594;
+    color: #F3EFEA;
     letter-spacing: 2px;
 }
 
 .brand-tagline {
     font-size: 12px;
-    color: #999;
+    color: #D4AF37;
 }
 
 .welcome-banner {
     margin-top: 10px;
     padding: 6px 15px;
-    background: rgba(230, 197, 148, 0.08);
-    border-top: 1px solid rgba(230, 197, 148, 0.2);
-    border-bottom: 1px solid rgba(230, 197, 148, 0.2);
+    background: rgba(212, 175, 55, 0.08);
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
 }
 
 .welcome-banner p {
     font-family: 'Amiri', serif;
     font-size: 13px;
-    color: #e6c594;
-    letter-spacing: 0.5px;
+    color: #F3EFEA;
 }
 
-/* الحاوية الرئيسية */
 .main-container {
     flex: 1;
     width: 100%;
@@ -84,10 +72,9 @@ body {
     }
 }
 
-/* لوحة التحكم */
 .control-panel {
-    background: #141414;
-    border: 1px solid #262626;
+    background: #1C1214;
+    border: 1px solid #3A2226;
     border-radius: 16px;
     padding: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
@@ -95,9 +82,9 @@ body {
 
 .control-panel h2 {
     font-size: 17px;
-    color: #e6c594;
+    color: #D4AF37;
     margin-bottom: 12px;
-    border-bottom: 1px solid #222;
+    border-bottom: 1px solid #3A2226;
     padding-bottom: 8px;
 }
 
@@ -108,7 +95,7 @@ body {
 .form-group label {
     display: block;
     font-size: 12px;
-    color: #aaa;
+    color: #D1C7C1;
     margin-bottom: 4px;
 }
 
@@ -116,25 +103,24 @@ body {
     width: 100%;
     padding: 9px 12px;
     border-radius: 8px;
-    background: #1f1f1f;
-    color: #fff;
-    border: 1px solid #333;
+    background: #28191C;
+    color: #FFF;
+    border: 1px solid #482E33;
     font-size: 13px;
 }
 
 .form-group input[type="text"]:focus {
-    border-color: #e6c594;
+    border-color: #D4AF37;
     outline: none;
 }
 
-/* تصميم قوائم الـ Select والملفات */
 select {
     width: 100%;
     padding: 10px;
     border-radius: 8px;
-    background: #1f1f1f;
-    color: #fff;
-    border: 1px solid #333;
+    background: #28191C;
+    color: #FFF;
+    border: 1px solid #482E33;
     font-size: 13px;
     cursor: pointer;
 }
@@ -143,19 +129,19 @@ select {
     display: block;
     width: 100%;
     padding: 10px;
-    background: #1f1f1f;
-    border: 1px dashed #555;
+    background: #28191C;
+    border: 1px dashed #68424A;
     border-radius: 8px;
     text-align: center;
     font-size: 12px;
-    color: #ccc;
+    color: #D1C7C1;
     cursor: pointer;
     transition: 0.3s;
 }
 
 .file-upload-btn:hover {
-    border-color: #e6c594;
-    color: #e6c594;
+    border-color: #D4AF37;
+    color: #D4AF37;
 }
 
 input[type="file"] {
@@ -169,25 +155,34 @@ input[type="file"] {
     padding-bottom: 5px;
 }
 
-.template-thumb img {
-    width: 50px;
-    height: 75px;
-    object-fit: cover;
+.template-thumb {
+    padding: 8px 12px;
+    background: #28191C;
+    border: 1px solid #482E33;
     border-radius: 6px;
     cursor: pointer;
-    border: 2px solid transparent;
+    font-size: 11px;
+    color: #D4AF37;
+    text-align: center;
+    white-space: nowrap;
 }
 
-.template-thumb img:hover {
-    border-color: #e6c594;
+.template-thumb:hover {
+    border-color: #D4AF37;
+    background: #382227;
 }
 
-/* الألوان الحرة */
 .color-control-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 8px;
-    margin-bottom: 12px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    margin-bottom: 4px;
+}
+
+@media(max-width: 500px) {
+    .color-control-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .picker-group {
@@ -197,7 +192,7 @@ input[type="file"] {
 }
 
 .picker-group label {
-    font-size: 11px;
+    font-size: 10px;
 }
 
 .picker-group input[type="color"] {
@@ -212,24 +207,24 @@ input[type="file"] {
 .checkout-section {
     margin-top: 15px;
     padding-top: 12px;
-    border-top: 1px dashed #333;
+    border-top: 1px dashed #482E33;
 }
 
 .checkout-section h3 {
     font-size: 13px;
-    color: #e6c594;
+    color: #D4AF37;
     margin-bottom: 4px;
 }
 
 .payment-instructions {
     font-size: 11px;
-    color: #aaa;
+    color: #D1C7C1;
     margin-bottom: 8px;
 }
 
 .submit-btn {
     width: 100%;
-    background: linear-gradient(135deg, #e6c594, #aa771c);
+    background: linear-gradient(135deg, #D4AF37, #AA771C);
     color: #111;
     padding: 12px;
     border: none;
@@ -254,7 +249,7 @@ input[type="file"] {
 
 .preview-title {
     font-size: 13px;
-    color: #888;
+    color: #D1C7C1;
     margin-bottom: 8px;
 }
 
@@ -262,9 +257,9 @@ input[type="file"] {
     width: 100%;
     max-width: 360px;
     height: 650px;
-    background: #000;
+    background: #111;
     border-radius: 35px;
-    border: 7px solid #222;
+    border: 7px solid #28191C;
     box-shadow: 0 20px 40px rgba(0,0,0,0.8);
     overflow: hidden;
     position: relative;
@@ -274,27 +269,40 @@ input[type="file"] {
     position: relative;
     width: 100%;
     height: 100%;
-    background-size: cover;
-    background-position: center;
+    background-color: var(--envelope-bg);
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+/* تصميم الظرف */
 .envelope {
     position: absolute;
-    width: 88%;
-    height: 85%;
+    width: 90%;
+    height: 90%;
     background-color: var(--envelope-bg);
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.8);
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
+    transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
     z-index: 10;
     border: 2px solid var(--accent-color);
+    overflow: hidden;
+}
+
+.envelope-inner-lining {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: 1px dashed var(--accent-color);
+    border-radius: 10px;
+    opacity: 0.4;
+    pointer-events: none;
 }
 
 .envelope.open {
@@ -303,33 +311,75 @@ input[type="file"] {
     pointer-events: none;
 }
 
-.seal-badge {
-    background: var(--accent-color);
-    color: #111;
-    padding: 10px 18px;
-    border-radius: 30px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+/* تصميم ختم الشمع الملكي الفخم */
+.wax-seal-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    z-index: 15;
 }
 
-.seal-badge span {
-    display: block;
+.wax-seal-badge:hover {
+    transform: scale(1.05);
+}
+
+.seal-ring {
+    width: 75px;
+    height: 75px;
+    background: radial-gradient(circle at 30% 30%, #f3d5b5, var(--accent-color));
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6), inset 0 2px 4px rgba(255, 255, 255, 0.4);
+}
+
+.seal-text {
+    font-family: 'Amiri', serif;
+    font-size: 24px;
     font-weight: bold;
-    font-size: 13px;
+    color: #3a0a10;
+    text-shadow: 0 1px 1px rgba(255,255,255,0.4);
 }
 
-.seal-badge small {
-    font-size: 10px;
-    opacity: 0.8;
+.seal-hint {
+    margin-top: 10px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 11px;
+    color: var(--accent-color);
+    background: rgba(0, 0, 0, 0.4);
+    padding: 3px 10px;
+    border-radius: 12px;
+    letter-spacing: 0.5px;
 }
 
+/* كارت الدعوة الداخلي */
 .invitation-card {
     text-align: center;
     padding: 20px;
     z-index: 1;
     color: var(--card-text-color);
     font-family: var(--card-font);
+    width: 92%;
+    height: 92%;
+    background: var(--card-bg);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.inner-card-border {
+    border: 1px solid var(--accent-color);
+    padding: 25px 15px;
+    border-radius: 10px;
     width: 100%;
+    box-shadow: inset 0 0 15px rgba(212,175,55,0.05);
 }
 
 .invite-header-text {
@@ -338,44 +388,34 @@ input[type="file"] {
 }
 
 .invitation-card h1 {
-    font-size: 34px;
+    font-size: 32px;
     margin: 8px 0;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.6);
 }
 
 .ampersand {
-    font-size: 22px;
+    font-size: 20px;
     display: block;
+    color: var(--accent-color);
 }
 
 .event-date-display {
-    margin-top: 12px;
-    font-size: 14px;
+    margin-top: 10px;
+    font-size: 13px;
     font-weight: bold;
 }
 
 .welcome-msg {
-    margin-top: 12px;
-    font-size: 12px;
+    margin-top: 10px;
+    font-size: 11px;
     opacity: 0.85;
 }
 
 .brand-footer {
-    background: #111;
-    border-top: 1px solid #222;
+    background: #1C1214;
+    border-top: 1px solid #3A2226;
     padding: 15px;
     text-align: center;
     font-size: 12px;
-    color: #777;
+    color: #A39691;
     margin-top: auto;
 }
-
-.footer-links {
-    margin-top: 5px;
-}
-
-.footer-links a {
-    color: #e6c594;
-    text-decoration: none;
-    margin: 0 5px;
-    }
