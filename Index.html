@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تصميم دعوات رقمية فخمة</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- استدعاء خطوط جوجل اللي حملتها -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- شاشة اختيار القالب والألوان -->
+        <section class="control-panel">
+            <h2>صمم دعوتك بنفسك</h2>
+            
+            <!-- 1. اختيار القالب الأساسي (الصور اللي رفعتها) -->
+            <label>اختر قالب التصميم:</label>
+            <div class="templates-grid">
+                <div class="template-thumb" onclick="changeTheme('images/theme1.jpg', '#0b192c', '#d4af37')">
+                    <img src="images/theme1.jpg" alt="قالب كحلي">
+                </div>
+                <div class="template-thumb" onclick="changeTheme('images/theme2.jpg', '#4a0e2e', '#f3e5ab')">
+                    <img src="images/theme2.jpg" alt="قالب بورجوندي">
+                </div>
+                <div class="template-thumb" onclick="changeTheme('images/theme3.jpg', '#3b0917', '#ffffff')">
+                    <img src="images/theme3.jpg" alt="قالب فاخر">
+                </div>
+            </div>
+
+            <!-- 2. أدوات التحكم في الألوان (الظرف والخطوط) -->
+            <div class="color-pickers">
+                <div class="picker-group">
+                    <label>لون الظرف / الغلاف:</label>
+                    <input type="color" id="envelopeColorPicker" value="#4a0e2e" onchange="updateEnvelopeColor(this.value)">
+                </div>
+                <div class="picker-group">
+                    <label>لون الخط والنص:</label>
+                    <input type="color" id="textColorPicker" value="#d4af37" onchange="updateTextColor(this.value)">
+                </div>
+            </div>
+
+            <!-- 3. اختيار الخط -->
+            <label>اختر شكل الخط:</label>
+            <select id="fontSelector" onchange="changeFont(this.value)">
+                <option value="'Amiri', serif">خط أميري كلاسيكي</option>
+                <option value="'Cairo', sans-serif">خط كايرو عصري</option>
+            </select>
+        </section>
+
+        <!-- معاينة الدعوة الحية (الظرف والكارت) -->
+        <section class="preview-section" id="previewBackground" style="background-image: url('images/theme1.jpg');">
+            
+            <!-- الظرف المتحرك الذي يفتح -->
+            <div class="envelope" id="envelopeBox" onclick="openEnvelope()">
+                <div class="envelope-flap" id="envelopeFlap"></div>
+                <div class="seal-btn">اضغط لفتح الدعوة 💌</div>
+            </div>
+
+            <!-- محتوى الدعوة الداخلي -->
+            <div class="invitation-card" id="invitationCard">
+                <h1 id="groomName">أحمد</h1>
+                <span class="ampersand">&</span>
+                <h1 id="brideName">سارة</h1>
+                <p class="event-date">يسعدنا حضوركم حفل زفافنا المبروك</p>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+                  </html>
+                  
