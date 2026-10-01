@@ -14,20 +14,25 @@ function updateCustomMsg(val) {
     document.getElementById('displayCustomMsg').innerText = val || 'لتهنئتكم ومشاركتنا أجمل لحظات العمر';
 }
 
-function changeTheme(imagePath, defaultEnvColor, defaultTextColor, defaultAccent) {
-    document.getElementById('previewBackground').style.backgroundImage = `url('${imagePath}')`;
+function applyPreset(envColor, cardBg, textColor, accentColor) {
+    updateEnvelopeColor(envColor);
+    updateCardBgColor(cardBg);
+    updateTextColor(textColor);
+    updateAccentColor(accentColor);
     
-    updateEnvelopeColor(defaultEnvColor);
-    updateTextColor(defaultTextColor);
-    updateAccentColor(defaultAccent);
-    
-    document.getElementById('envelopeColorPicker').value = defaultEnvColor;
-    document.getElementById('textColorPicker').value = defaultTextColor;
-    document.getElementById('accentColorPicker').value = defaultAccent;
+    document.getElementById('envelopeColorPicker').value = envColor;
+    document.getElementById('cardBgColorPicker').value = cardBg;
+    document.getElementById('textColorPicker').value = textColor;
+    document.getElementById('accentColorPicker').value = accentColor;
 }
 
 function updateEnvelopeColor(color) {
     document.documentElement.style.setProperty('--envelope-bg', color);
+    document.getElementById('previewBackground').style.backgroundColor = color;
+}
+
+function updateCardBgColor(color) {
+    document.documentElement.style.setProperty('--card-bg', color);
 }
 
 function updateTextColor(color) {
@@ -42,18 +47,37 @@ function changeFont(fontFamily) {
     document.documentElement.style.setProperty('--card-font', fontFamily);
 }
 
+function handleAudioUpload(input) {
+    const label = document.getElementById('audioLabel');
+    if (input.files && input.files[0]) {
+        label.innerText = "تم الرفع: " + input.files[0].name;
+        label.style.color = "#D4AF37";
+        label.style.borderColor = "#D4AF37";
+
+        const audioElem = document.getElementById('bgMusic');
+        audioElem.src = URL.createObjectURL(input.files[0]);
+    }
+}
+
 function updateFileName(input, labelId) {
     const label = document.getElementById(labelId);
     if (input.files && input.files[0]) {
         label.innerText = "تم الرفع: " + input.files[0].name;
-        label.style.color = "#e6c594";
-        label.style.borderColor = "#e6c594";
+        label.style.color = "#D4AF37";
+        label.style.borderColor = "#D4AF37";
     }
 }
 
-function openEnvelope() {
+function openEnvelopeWithMusic() {
     const envelope = document.getElementById('envelopeBox');
     envelope.classList.add('open');
+
+    const audioElem = document.getElementById('bgMusic');
+    if (audioElem.src) {
+        audioElem.play().catch(error => {
+            console.log("التشغيل التلقائي يتطلب تفاعل المستخدم وتم بنجاح عبر الضغط.");
+        });
+    }
 }
 
 function submitOrder() {
