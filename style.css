@@ -1,103 +1,111 @@
 :root {
-    --bg-dark: #1b1617;
-    --card-dark: #272122;
-    --burgundy: #58111A;
+    --bg-dark: #120d0e;
+    --card-dark: #1e1517;
+    --burgundy: #58111A; /* البورجوندي الفخم المطلوب */
     --gold: #D4AF37;
     --cream: #FAF6F0;
     --text-light: #E8D9D0;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
-body { font-family: 'Cairo', sans-serif; background-color: var(--bg-dark); color: var(--text-light); direction: rtl; }
+body { font-family: 'Cairo', sans-serif; background-color: var(--bg-dark); color: var(--text-light); direction: rtl; overflow-x: hidden; }
 
-/* الهيدر */
-.main-header { background: #221a1b; border-bottom: 1px solid rgba(212,175,55,0.2); position: sticky; top: 0; z-index: 1000; padding: 12px 0; }
-.header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
-.brand-logo { font-family: 'Amiri', serif; font-size: 24px; color: var(--gold); font-weight: bold; }
-.nav-links { display: flex; gap: 20px; }
-.nav-links a { color: var(--text-light); text-decoration: none; font-size: 14px; transition: 0.3s; }
+/* الهيدر المتجاوب */
+.main-header { background: rgba(30, 21, 23, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(212,175,55,0.2); position: sticky; top: 0; z-index: 1000; padding: 12px 0; }
+.header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 15px; }
+.brand-logo { font-family: 'Amiri', serif; font-size: 20px; color: var(--gold); font-weight: bold; }
+.nav-links { display: flex; gap: 15px; }
+.nav-links a { color: var(--text-light); text-decoration: none; font-size: 13px; transition: 0.3s; }
 .nav-links a:hover { color: var(--gold); }
-.header-actions { display: flex; gap: 10px; }
-.btn-outline, .btn-solid, .btn-gold, .btn-trans { padding: 8px 16px; border-radius: 8px; font-size: 13px; cursor: pointer; text-decoration: none; font-weight: bold; }
-.btn-outline { background: none; border: 1px solid var(--gold); color: var(--gold); }
-.btn-solid { background: var(--burgundy); border: 1px solid var(--gold); color: #fff; }
-.btn-gold { background: linear-gradient(135deg, #D4AF37, #AA771C); border: none; color: #2C1810; }
-.btn-trans { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); color: #fff; }
 
-/* الأقسام العامة */
-section { padding: 60px 20px; max-width: 1200px; margin: 0 auto; }
-.section-title { text-align: center; margin-bottom: 40px; }
-.section-title h2 { font-family: 'Amiri', serif; font-size: 32px; color: var(--gold); margin-bottom: 10px; }
-.section-title p { color: #bca89e; font-size: 14px; }
+@media(max-width: 768px) {
+    .nav-links { display: none; } /* إخفاء القوائم في الموبايل لتصميم أنظف */
+}
 
-/* قسم الهيرو */
-.hero-section { text-align: center; padding: 100px 20px; background: radial-gradient(circle, #350f15 0%, #1b1617 70%); }
-.hero-content h1 { font-family: 'Amiri', serif; font-size: 42px; margin-bottom: 15px; color: #fff; }
-.hero-content p { color: var(--gold); font-size: 16px; margin-bottom: 30px; }
-.hero-buttons { display: flex; justify-content: center; gap: 15px; }
+/* الأزرار */
+.btn-gold { background: linear-gradient(135deg, #D4AF37, #AA771C); border: none; color: #2C1810; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s; }
+.btn-solid { background: var(--burgundy); border: 1px solid var(--gold); color: #fff; padding: 8px 16px; border-radius: 8px; font-weight: bold; cursor: pointer; }
+.btn-trans { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); color: #fff; padding: 8px 16px; border-radius: 8px; }
 
-/* الكتالوج والقوالب */
-.templates-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+/* الأقسام العامة متجاوبة */
+section { padding: 50px 15px; max-width: 1200px; margin: 0 auto; }
+.section-title { text-align: center; margin-bottom: 30px; }
+.section-title h2 { font-family: 'Amiri', serif; font-size: 26px; color: var(--gold); margin-bottom: 8px; }
+.section-title p { color: #bca89e; font-size: 13px; }
+
+/* الهيرو */
+.hero-section { text-align: center; padding: 70px 15px; background: radial-gradient(circle, #421118 0%, #120d0e 80%); }
+.hero-content h1 { font-family: 'Amiri', serif; font-size: 32px; margin-bottom: 12px; color: #fff; line-height: 1.4; }
+.hero-content p { color: var(--gold); font-size: 14px; margin-bottom: 25px; }
+
+@media(min-width: 768px) {
+    .hero-content h1 { font-size: 44px; }
+    .hero-section { padding: 100px 20px; }
+}
+
+/* الكتالوج */
+.templates-grid, .features-grid, .pricing-grid, .reviews-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+
+@media(min-width: 600px) {
+    .templates-grid, .features-grid, .pricing-grid, .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media(min-width: 992px) {
+    .templates-grid, .features-grid, .pricing-grid, .reviews-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
 .template-card { background: var(--card-dark); border: 1px solid #3c3133; border-radius: 14px; overflow: hidden; cursor: pointer; transition: 0.3s; position: relative; }
 .template-card:hover { transform: translateY(-5px); border-color: var(--gold); }
 .template-badge { position: absolute; top: 10px; left: 10px; background: var(--gold); color: #2c1810; font-size: 10px; padding: 3px 8px; border-radius: 4px; font-weight: bold; }
-.template-img-box { height: 220px; display: flex; align-items: center; justify-content: center; }
+.template-img-box { height: 180px; display: flex; align-items: center; justify-content: center; }
 .swan-bg { background: #3b4238; }
-.gold-bg { background: #58111A; }
-.eng-bg { background: #453627; }
-.mini-seal { font-size: 40px; background: var(--cream); width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid var(--gold); box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
-.template-info { padding: 20px; }
-.template-info h3 { font-size: 16px; color: var(--gold); margin-bottom: 5px; }
-.template-info p { font-size: 12px; color: #bca89e; margin-bottom: 15px; }
-.preview-btn { width: 100%; background: #352b2d; border: 1px solid #524346; color: #fff; padding: 8px; border-radius: 6px; cursor: pointer; transition: 0.3s; }
+.gold-bg { background: var(--burgundy); }
+.eng-bg { background: #452727; }
+.mini-seal { font-size: 35px; background: var(--cream); width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid var(--gold); box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
+.template-info { padding: 15px; }
+.template-info h3 { font-size: 15px; color: var(--gold); margin-bottom: 5px; }
+.template-info p { font-size: 12px; color: #bca89e; margin-bottom: 12px; }
+.preview-btn { width: 100%; background: #352b2d; border: 1px solid #524346; color: #fff; padding: 8px; border-radius: 6px; cursor: pointer; transition: 0.3s; font-size: 12px; }
 .preview-btn:hover { background: var(--gold); color: #2c1810; }
 
-/* المميزات */
-.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-.feature-box { background: var(--card-dark); padding: 25px; border-radius: 12px; border: 1px solid #3c3133; font-size: 24px; }
-.feature-box h3 { font-size: 18px; color: var(--gold); margin: 10px 0 5px; }
-.feature-box p { font-size: 13px; color: #bca89e; }
+/* المميزات والأسعار */
+.feature-box, .price-card, .review-card { background: var(--card-dark); padding: 20px; border-radius: 12px; border: 1px solid #3c3133; }
+.feature-box h3 { font-size: 16px; color: var(--gold); margin: 8px 0 4px; }
+.feature-box p { font-size: 12px; color: #bca89e; }
 
-/* الأسعار */
-.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-.price-card { background: var(--card-dark); border: 1px solid #3c3133; border-radius: 14px; padding: 30px; text-align: center; }
-.price-card.featured { border-color: var(--gold); background: #2c2123; }
-.price-card h3 { font-size: 16px; color: var(--gold); margin-bottom: 15px; }
-.price-val { font-size: 30px; font-weight: bold; color: #fff; margin-bottom: 20px; }
-.price-val span { font-size: 14px; color: var(--gold); }
-.price-card ul { list-style: none; text-align: right; margin-bottom: 20px; font-size: 13px; color: #dcd6d0; }
-.price-card ul li { margin-bottom: 8px; }
+.price-card.featured { border-color: var(--gold); background: #261619; }
+.price-card h3 { font-size: 15px; color: var(--gold); margin-bottom: 10px; text-align: center; }
+.price-val { font-size: 28px; font-weight: bold; color: #fff; margin-bottom: 15px; text-align: center; }
+.price-val span { font-size: 13px; color: var(--gold); }
+.price-card ul { list-style: none; text-align: right; margin-bottom: 15px; font-size: 12px; color: #dcd6d0; }
+.price-card ul li { margin-bottom: 6px; }
 
 /* التقييمات */
-.rating-box-header { display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 10px; }
-.stars { color: var(--gold); font-size: 18px; }
-.score { font-weight: bold; color: #fff; }
-.reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-.review-card { background: var(--card-dark); padding: 20px; border-radius: 12px; border: 1px solid #3c3133; }
-.review-card p { font-size: 13px; margin-bottom: 10px; font-style: italic; }
-.review-card small { color: var(--gold); font-weight: bold; }
+.review-card p { font-size: 12px; margin-bottom: 8px; font-style: italic; }
+.review-card small { color: var(--gold); font-weight: bold; font-size: 11px; }
 
-/* الأسئلة الشائعة */
-.faq-container { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px; }
-.faq-item { background: var(--card-dark); border: 1px solid #3c3133; border-radius: 8px; padding: 15px; cursor: pointer; }
-.faq-item summary { font-weight: bold; color: var(--gold); font-size: 14px; }
-.faq-item p { margin-top: 10px; font-size: 13px; color: #bca89e; }
+/* النافذة المنبثقة والمعاينة التفاعلية المتجاوبة للموبايل */
+.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); display: none; justify-content: center; align-items: center; z-index: 2000; padding: 10px; }
+.modal-content { position: relative; width: 100%; max-width: 360px; height: 90vh; max-height: 700px; background: #221c1e; border-radius: 25px; border: 4px solid var(--gold); overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.9); }
+.close-modal { position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.6); border: 1px solid var(--gold); color: #fff; font-size: 12px; padding: 4px 10px; border-radius: 6px; cursor: pointer; z-index: 3000; }
 
-/* المودال (نافذة المعاينة التفاعلية) */
-.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); display: none; justify-content: center; align-items: center; z-index: 2000; }
-.modal-content { position: relative; width: 380px; height: 700px; background: #221c1e; border-radius: 30px; border: 6px solid var(--gold); overflow: hidden; }
-.close-modal { position: absolute; top: 15px; left: 15px; background: none; border: none; color: #fff; font-size: 20px; cursor: pointer; z-index: 3000; }
-.phone-frame { position: relative; width: 100%; height: 100%; background: #3b4238; display: flex; justify-content: center; align-items: center; }
-.env-screen { position: absolute; width: 100%; height: 100%; background: #353b32; display: flex; justify-content: center; align-items: center; cursor: pointer; transition: transform 0.8s ease, opacity 0.5s ease; z-index: 10; }
+.phone-frame { position: relative; width: 100%; height: 100%; background: #3b4238; display: flex; justify-content: center; align-items: center; overflow: hidden; }
+
+/* شاشة الظرف التفاعلي المتحرك */
+.env-screen { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #2d332a, #424a3c); display: flex; justify-content: center; align-items: center; cursor: pointer; transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.5s ease; z-index: 20; }
 .env-screen.open { transform: translateY(-100%); opacity: 0; pointer-events: none; }
-.modal-seal { width: 100px; height: 100px; background: var(--cream); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 3px solid var(--gold); box-shadow: 0 10px 20px rgba(0,0,0,0.6); }
-.modal-seal span { font-size: 30px; }
-.modal-seal small { font-size: 9px; color: #555; margin-top: 4px; }
-.card-screen { padding: 30px; text-align: center; color: #2b3029; background: var(--cream); width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; font-family: 'Amiri', serif; }
-.card-screen h2 { font-size: 22px; color: #58111A; margin-bottom: 10px; }
-.card-screen h1 { font-size: 32px; color: #2b3029; margin: 15px 0; }
-.card-screen p { font-size: 14px; color: #555; font-family: 'Cairo', sans-serif; }
-.countdown-box { margin-top: 25px; padding: 10px; background: #3b4238; color: var(--gold); border-radius: 8px; font-size: 12px; font-family: 'Cairo', sans-serif; }
 
-footer { background: #151112; text-align: center; padding: 20px; border-top: 1px solid #3c3133; font-size: 12px; color: #888; }
-                   
+.modal-seal { width: 90px; height: 90px; background: var(--cream); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 3px solid var(--gold); box-shadow: 0 10px 25px rgba(0,0,0,0.6); animation: pulseSeal 1.8s infinite; }
+@keyframes pulseSeal { 0% { transform: scale(1); } 50% { transform: scale(1.07); } 100% { transform: scale(1); } }
+.modal-seal span { font-size: 28px; }
+.modal-seal small { font-size: 8px; color: #555; margin-top: 3px; font-weight: bold; }
+
+/* شاشة الدعوة الداخلية */
+.card-screen { padding: 25px 20px; text-align: center; color: #2b3029; background: var(--cream); width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; font-family: 'Amiri', serif; }
+.card-screen h2 { font-size: 20px; color: var(--burgundy); margin-bottom: 8px; }
+.card-screen h1 { font-size: 28px; color: #2b3029; margin: 10px 0; font-weight: bold; }
+.card-screen p { font-size: 13px; color: #555; font-family: 'Cairo', sans-serif; }
+.countdown-box { margin-top: 20px; padding: 10px; background: var(--burgundy); color: var(--gold); border-radius: 8px; font-size: 11px; font-family: 'Cairo', sans-serif; width: 100%; }
+
+footer { background: #0c090a; text-align: center; padding: 20px; border-top: 1px solid #3c3133; font-size: 11px; color: #777; }
+                 
