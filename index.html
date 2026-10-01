@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eternal Vows | منصة دعوات الزفاف الرقمية الفخمة</title>
     <link rel="stylesheet" href="style.css">
-    <!-- استدعاء خطوط جوجل والخطوط الملكية -->
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@300;400;600;700&family=Reem+Kufi:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- الهيدر الثابت للبراند مع الجملة الترحيبية الراقية -->
     <header class="brand-header">
         <div class="logo-container">
             <h1 class="brand-name">Eternal Vows</h1>
@@ -21,14 +19,12 @@
         </div>
     </header>
 
-    <!-- المحتوى الرئيسي للموقع -->
     <main class="main-container">
         
-        <!-- لوحة التحكم الاحترافية -->
+        <!-- لوحة التحكم -->
         <section class="control-panel">
             <h2>صمم دعوتك بكل تفاصيلها</h2>
 
-            <!-- أسماء العروسين وتاريخ الحفل -->
             <div class="form-group">
                 <label>اسم العريس:</label>
                 <input type="text" id="inputGroom" value="أحمد" oninput="updateGroomName(this.value)">
@@ -46,64 +42,55 @@
                 <input type="text" id="inputCustomMsg" value="لتهنئتكم ومشاركتنا أجمل لحظات العمر" oninput="updateCustomMsg(this.value)">
             </div>
 
-            <!-- اختيار القالب الأساسي من صورك -->
+            <!-- التحكم الحر في الألوان (البرندي والسكري أساسي مع حرية التغيير) -->
             <div class="form-group">
-                <label>اختر قالب التصميم الفاخر:</label>
+                <label>تخصيص لوحة الألوان (الأساس برندي وسكري):</label>
+                <div class="color-control-grid">
+                    <div class="picker-group">
+                        <label>الظرف الخارجي:</label>
+                        <input type="color" id="envelopeColorPicker" value="#58111A" onchange="updateEnvelopeColor(this.value)">
+                    </div>
+                    <div class="picker-group">
+                        <label>لون البطاقة:</label>
+                        <input type="color" id="cardBgColorPicker" value="#FAF6F0" onchange="updateCardBgColor(this.value)">
+                    </div>
+                    <div class="picker-group">
+                        <label>النصوص:</label>
+                        <input type="color" id="textColorPicker" value="#2C1810" onchange="updateTextColor(this.value)">
+                    </div>
+                    <div class="picker-group">
+                        <label>الإطار والذهبي:</label>
+                        <input type="color" id="accentColorPicker" value="#D4AF37" onchange="updateAccentColor(this.value)">
+                    </div>
+                </div>
+            </div>
+
+            <!-- تنسيقات سريعة مقترحة -->
+            <div class="form-group">
+                <label>تنسيقات سريعة مقترحة:</label>
                 <div class="templates-grid">
-                    <div class="template-thumb" onclick="changeTheme('images/theme1.jpg', '#4a121a', '#fdfbf7', '#e6c594')">
-                        <img src="images/theme1.jpg" alt="قالب 1">
-                    </div>
-                    <div class="template-thumb" onclick="changeTheme('images/theme2.jpg', '#2d0c15', '#fdfbf7', '#d4af37')">
-                        <img src="images/theme2.jpg" alt="قالب 2">
-                    </div>
-                    <div class="template-thumb" onclick="changeTheme('images/theme3.jpg', '#1e293b', '#ffffff', '#b8860b')">
-                        <img src="images/theme3.jpg" alt="قالب 3">
-                    </div>
-                    <div class="template-thumb" onclick="changeTheme('images/theme4.jpg', '#5c1d32', '#f3d5b5', '#e6c594')">
-                        <img src="images/theme4.jpg" alt="قالب 4">
-                    </div>
-                    <div class="template-thumb" onclick="changeTheme('images/theme5.jpg', '#3b0917', '#ffffff', '#d4af37')">
-                        <img src="images/theme5.jpg" alt="قالب 5">
-                    </div>
+                    <div class="template-thumb" onclick="applyPreset('#58111A', '#FAF6F0', '#2C1810', '#D4AF37')"><span>برندي ملكي & سكري</span></div>
+                    <div class="template-thumb" onclick="applyPreset('#1E293B', '#FFFFFF', '#0F172A', '#C5A059')"><span>كحلي داكن & أبيض</span></div>
+                    <div class="template-thumb" onclick="applyPreset('#14231E', '#F4F9F5', '#112218', '#A3B899')"><span>أخضر زمردي & سكري</span></div>
+                    <div class="template-thumb" onclick="applyPreset('#2C221E', '#FFF8F0', '#221814', '#D48C46')"><span>بنّي شوكولاتة & بيج</span></div>
                 </div>
             </div>
 
-            <!-- تدرج الألوان الحر (زنجي مع سكري وذهبي) -->
-            <div class="color-control-grid">
-                <div class="picker-group">
-                    <label>الظرف:</label>
-                    <input type="color" id="envelopeColorPicker" value="#4a121a" onchange="updateEnvelopeColor(this.value)">
-                </div>
-                <div class="picker-group">
-                    <label>النصوص:</label>
-                    <input type="color" id="textColorPicker" value="#fdfbf7" onchange="updateTextColor(this.value)">
-                </div>
-                <div class="picker-group">
-                    <label>الإطار:</label>
-                    <input type="color" id="accentColorPicker" value="#e6c594" onchange="updateAccentColor(this.value)">
-                </div>
-            </div>
-
-            <!-- اختيار الخط (يؤثر على الكارت الداخلي فقط) -->
             <div class="form-group">
                 <label>اختر نمط الخط الملكي:</label>
                 <select id="fontSelector" onchange="changeFont(this.value)">
                     <option value="'Amiri', serif">الخط الأول (أميري كلاسيكي أصيل)</option>
                     <option value="'Reem Kufi', sans-serif">الخط الثاني (رُيم كوفي فخم)</option>
                     <option value="'Cairo', sans-serif">الخط الثالث (كايرو عصري ناعم)</option>
-                    <option value="'MyCustomFont4', serif">الخط الرابع (ملكي خاص)</option>
-                    <option value="'MyCustomFont5', sans-serif">الخط الخامس (توقيعي فاخر)</option>
                 </select>
             </div>
 
-            <!-- رفع الأغنية وزر مخصص -->
             <div class="form-group">
-                <label>موسيقى الدعوة:</label>
+                <label>موسيقى الدعوة (تشتغل في الخلفية):</label>
                 <label for="audioUpload" class="file-upload-btn" id="audioLabel">🎵 اضغط هنا لرفع ملف الصوت</label>
-                <input type="file" accept="audio/*" id="audioUpload" onchange="updateFileName(this, 'audioLabel')">
+                <input type="file" accept="audio/*" id="audioUpload" onchange="handleAudioUpload(this)">
             </div>
 
-            <!-- تأكيد الطلب والدفع -->
             <div class="checkout-section">
                 <h3>تأكيد الحجز (تحويل كاش / إنستاباي)</h3>
                 <p class="payment-instructions">التحويل على: <strong>01000000000</strong></p>
@@ -115,45 +102,46 @@
             </div>
         </section>
 
-        <!-- معاينة الدعوة داخل إطار الموبايل الفخم -->
+        <!-- شاشة المعاينة (إطار الموبايل) -->
         <section class="preview-section-wrapper">
             <h3 class="preview-title">معاينة حية للدعوة (شاشة الموبايل)</h3>
             <div class="mobile-mockup-frame">
-                <div class="preview-section" id="previewBackground" style="background-image: url('images/theme1.jpg');">
+                <div class="preview-section" id="previewBackground">
                     
-                    <!-- الظرف المتحرك -->
-                    <div class="envelope" id="envelopeBox" onclick="openEnvelope()">
-                        <div class="seal-badge">
-                            <span>Eternal Vows</span>
-                            <small>اضغط لفتح الدعوة 💌</small>
+                    <!-- عنصر الصوت المخفي للتشغيل التلقائي عند الفتح -->
+                    <audio id="bgMusic" loop></audio>
+
+                    <!-- الظرف الفخم مع ختم الشمع الملكي -->
+                    <div class="envelope" id="envelopeBox" onclick="openEnvelopeWithMusic()">
+                        <div class="envelope-inner-lining"></div>
+                        <div class="wax-seal-badge">
+                            <div class="seal-ring">
+                                <span class="seal-text">EV</span>
+                            </div>
+                            <small class="seal-hint">اضغط لفتح الدعوة 💌</small>
                         </div>
                     </div>
 
                     <!-- كارت الدعوة الداخلي -->
                     <div class="invitation-card" id="invitationCard">
-                        <span class="invite-header-text">يسعدنا حضوركم حفل زفافنا المبارك</span>
-                        <h1 id="displayGroom">أحمد</h1>
-                        <span class="ampersand">&</span>
-                        <h1 id="displayBride">سارة</h1>
-                        <p class="event-date-display" id="displayDate">الخميس، 25 أكتوبر 2026</p>
-                        <div class="welcome-msg" id="displayCustomMsg">لتهنئتكم ومشاركتنا أجمل لحظات العمر</div>
+                        <div class="inner-card-border">
+                            <span class="invite-header-text">يسعدنا حضوركم حفل زفافنا المبارك</span>
+                            <h1 id="displayGroom">أحمد</h1>
+                            <span class="ampersand">&</span>
+                            <h1 id="displayBride">سارة</h1>
+                            <p class="event-date-display" id="displayDate">الخميس، 25 أكتوبر 2026</p>
+                            <div class="welcome-msg" id="displayCustomMsg">لتهنئتكم ومشاركتنا أجمل لحظات العمر</div>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </section>
 
     </main>
 
-    <!-- الفوتر الثابت -->
     <footer class="brand-footer">
-        <div class="footer-content">
-            <p>&copy; 2026 <strong>Eternal Vows</strong>. جميع الحقوق محفوظة.</p>
-            <div class="footer-links">
-                <a href="#">سياسة الخصوصية</a> | 
-                <a href="#">الشروط والأحكام</a> | 
-                <a href="#">دعم العملاء</a>
-            </div>
-        </div>
+        <p>&copy; 2026 <strong>Eternal Vows</strong>. جميع الحقوق محفوظة.</p>
     </footer>
 
     <script src="script.js"></script>
