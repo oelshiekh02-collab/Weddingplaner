@@ -1,9 +1,8 @@
 :root {
-    --brand-primary: #1a1a1a;
-    --brand-gold: #d4af37;
-    --envelope-bg: #4a0e2e;
-    --text-color: #e6c594;
-    --main-font: 'Amiri', serif;
+    --envelope-bg: #4a121a;         /* الزنجي الفاخر */
+    --card-text-color: #fdfbf7;     /* السكري الناعم */
+    --card-font: 'Amiri', serif;
+    --accent-color: #e6c594;        /* الذهبي الدافئ المتناسق */
 }
 
 /* تعريف خطوطك الخاصة المضافة في مجلد fonts */
@@ -24,67 +23,81 @@
 
 body {
     font-family: 'Cairo', sans-serif;
-    background-color: #0c0c0c;
-    color: #f1f1f1;
+    background-color: #060606;
+    color: #e2e8f0;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
-/* الهيدر الثابت الفخم */
+/* الهيدر الثابت الفخم مع البانر الترحيبي */
 .brand-header {
-    background: linear-gradient(135deg, #111, #1e1e1e);
+    background: linear-gradient(135deg, #111, #181818);
     border-bottom: 2px solid #b8860b;
-    padding: 20px;
+    padding: 15px;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.6);
 }
 
 .brand-name {
     font-family: 'Amiri', serif;
-    font-size: 32px;
-    color: #d4af37;
+    font-size: 30px;
+    color: #e6c594;
     letter-spacing: 2px;
 }
 
 .brand-tagline {
-    font-size: 13px;
-    color: #aaa;
-    margin-top: 5px;
+    font-size: 12px;
+    color: #999;
 }
 
-/* الحاوية الرئيسية للموقع */
+.welcome-banner {
+    margin-top: 10px;
+    padding: 6px 15px;
+    background: rgba(230, 197, 148, 0.08);
+    border-top: 1px solid rgba(230, 197, 148, 0.2);
+    border-bottom: 1px solid rgba(230, 197, 148, 0.2);
+}
+
+.welcome-banner p {
+    font-family: 'Amiri', serif;
+    font-size: 13px;
+    color: #e6c594;
+    letter-spacing: 0.5px;
+}
+
+/* الحاوية الرئيسية */
 .main-container {
     flex: 1;
     width: 100%;
-    max-width: 1100px;
+    max-width: 1150px;
     margin: 20px auto;
-    padding: 0 15px;
+    padding: 0 10px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
+    grid-template-columns: 1fr 400px;
+    gap: 25px;
+    align-items: start;
 }
 
-@media(max-width: 768px) {
+@media(max-width: 900px) {
     .main-container {
         grid-template-columns: 1fr;
     }
 }
 
-/* لوحة التحكم الاحترافية */
+/* لوحة التحكم */
 .control-panel {
-    background: #181818;
-    border: 1px solid #333;
-    border-radius: 15px;
+    background: #141414;
+    border: 1px solid #262626;
+    border-radius: 16px;
     padding: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
 .control-panel h2 {
-    font-size: 20px;
-    color: #d4af37;
-    margin-bottom: 15px;
-    border-bottom: 1px solid #333;
+    font-size: 17px;
+    color: #e6c594;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #222;
     padding-bottom: 8px;
 }
 
@@ -94,151 +107,194 @@ body {
 
 .form-group label {
     display: block;
-    font-size: 13px;
-    color: #bbb;
-    margin-bottom: 5px;
+    font-size: 12px;
+    color: #aaa;
+    margin-bottom: 4px;
 }
 
-.form-group input[type="text"], select {
+.form-group input[type="text"] {
+    width: 100%;
+    padding: 9px 12px;
+    border-radius: 8px;
+    background: #1f1f1f;
+    color: #fff;
+    border: 1px solid #333;
+    font-size: 13px;
+}
+
+.form-group input[type="text"]:focus {
+    border-color: #e6c594;
+    outline: none;
+}
+
+/* تصميم قوائم الـ Select والملفات */
+select {
     width: 100%;
     padding: 10px;
     border-radius: 8px;
-    background: #222;
+    background: #1f1f1f;
     color: #fff;
-    border: 1px solid #444;
-    font-size: 14px;
+    border: 1px solid #333;
+    font-size: 13px;
+    cursor: pointer;
 }
 
-.form-group input[type="file"] {
+.file-upload-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: #1f1f1f;
+    border: 1px dashed #555;
+    border-radius: 8px;
+    text-align: center;
     font-size: 12px;
-    color: #aaa;
+    color: #ccc;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.file-upload-btn:hover {
+    border-color: #e6c594;
+    color: #e6c594;
+}
+
+input[type="file"] {
+    display: none;
 }
 
 .templates-grid {
     display: flex;
-    gap: 10px;
+    gap: 8px;
     overflow-x: auto;
     padding-bottom: 5px;
 }
 
 .template-thumb img {
-    width: 55px;
-    height: 80px;
+    width: 50px;
+    height: 75px;
     object-fit: cover;
     border-radius: 6px;
     cursor: pointer;
     border: 2px solid transparent;
-    transition: 0.3s;
 }
 
 .template-thumb img:hover {
-    border-color: #d4af37;
-    transform: scale(1.05);
+    border-color: #e6c594;
 }
 
+/* الألوان الحرة */
 .color-control-grid {
-    display: flex;
-    gap: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
     margin-bottom: 12px;
 }
 
 .picker-group {
-    flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 3px;
+}
+
+.picker-group label {
+    font-size: 11px;
 }
 
 .picker-group input[type="color"] {
     width: 100%;
-    height: 40px;
+    height: 35px;
     border: none;
     border-radius: 6px;
     cursor: pointer;
     background: none;
 }
 
-/* قسم الدفع */
 .checkout-section {
-    margin-top: 20px;
-    padding-top: 15px;
-    border-top: 1px dashed #444;
+    margin-top: 15px;
+    padding-top: 12px;
+    border-top: 1px dashed #333;
 }
 
 .checkout-section h3 {
-    font-size: 14px;
-    color: #d4af37;
-    margin-bottom: 5px;
+    font-size: 13px;
+    color: #e6c594;
+    margin-bottom: 4px;
 }
 
 .payment-instructions {
-    font-size: 12px;
-    color: #ccc;
-    margin-bottom: 10px;
+    font-size: 11px;
+    color: #aaa;
+    margin-bottom: 8px;
 }
 
 .submit-btn {
     width: 100%;
-    background: linear-gradient(135deg, #d4af37, #aa771c);
+    background: linear-gradient(135deg, #e6c594, #aa771c);
     color: #111;
     padding: 12px;
     border: none;
     border-radius: 8px;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 14px;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 8px;
     transition: 0.3s;
 }
 
 .submit-btn:hover {
     opacity: 0.9;
-    transform: translateY(-2px);
 }
 
-/* صندوق المعاينة الحية */
+/* إطار الموبايل */
 .preview-section-wrapper {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
 .preview-title {
-    font-size: 16px;
-    color: #bbb;
-    margin-bottom: 10px;
-    text-align: center;
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 8px;
+}
+
+.mobile-mockup-frame {
+    width: 100%;
+    max-width: 360px;
+    height: 650px;
+    background: #000;
+    border-radius: 35px;
+    border: 7px solid #222;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.8);
+    overflow: hidden;
+    position: relative;
 }
 
 .preview-section {
     position: relative;
     width: 100%;
-    height: 520px;
+    height: 100%;
     background-size: cover;
     background-position: center;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-    border: 3px solid #333;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* الظرف المتحرك */
 .envelope {
     position: absolute;
-    width: 90%;
-    height: 88%;
+    width: 88%;
+    height: 85%;
     background-color: var(--envelope-bg);
-    border-radius: 12px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.7);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
     transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
     z-index: 10;
-    border: 2px solid var(--text-color);
+    border: 2px solid var(--accent-color);
 }
 
 .envelope.open {
@@ -248,86 +304,78 @@ body {
 }
 
 .seal-badge {
-    background: var(--text-color);
+    background: var(--accent-color);
     color: #111;
-    padding: 12px 25px;
-    border-radius: 35px;
+    padding: 10px 18px;
+    border-radius: 30px;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
 .seal-badge span {
     display: block;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .seal-badge small {
-    font-size: 11px;
+    font-size: 10px;
     opacity: 0.8;
 }
 
-/* كارت الدعوة الداخلي */
 .invitation-card {
     text-align: center;
-    padding: 25px;
+    padding: 20px;
     z-index: 1;
-    color: var(--text-color);
-    font-family: var(--main-font);
+    color: var(--card-text-color);
+    font-family: var(--card-font);
     width: 100%;
 }
 
 .invite-header-text {
-    font-size: 14px;
-    letter-spacing: 1px;
+    font-size: 13px;
     opacity: 0.9;
 }
 
 .invitation-card h1 {
-    font-size: 38px;
-    margin: 10px 0;
-    text-shadow: 0 2px 5px rgba(0,0,0,0.6);
+    font-size: 34px;
+    margin: 8px 0;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.6);
 }
 
 .ampersand {
-    font-size: 24px;
+    font-size: 22px;
     display: block;
-    margin: 5px 0;
 }
 
 .event-date-display {
-    margin-top: 15px;
-    font-size: 15px;
+    margin-top: 12px;
+    font-size: 14px;
     font-weight: bold;
 }
 
 .welcome-msg {
-    margin-top: 15px;
-    font-size: 13px;
+    margin-top: 12px;
+    font-size: 12px;
     opacity: 0.85;
 }
 
-/* الفوتر */
 .brand-footer {
     background: #111;
     border-top: 1px solid #222;
-    padding: 20px;
+    padding: 15px;
     text-align: center;
-    font-size: 13px;
-    color: #888;
+    font-size: 12px;
+    color: #777;
     margin-top: auto;
 }
 
 .footer-links {
-    margin-top: 8px;
+    margin-top: 5px;
 }
 
 .footer-links a {
-    color: #b8860b;
+    color: #e6c594;
     text-decoration: none;
     margin: 0 5px;
-}
-
-.footer-links a:hover {
-    text-decoration: underline;
-}
+    }
